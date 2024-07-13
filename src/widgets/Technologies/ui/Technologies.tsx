@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import { Context } from "../../../pages/Landing";
+import { useRefsContext } from "../../../shared/contexts/RefsContext";
 
 const Technologies = () => {
-    const { technologiesRef } = useContext(Context);
+    const { technologiesRef } = useRefsContext();
 
     return (
         <section className="h-[100vh] text-white" ref={technologiesRef}>

@@ -1,5 +1,7 @@
+import logo from "../assets/logo.svg";
+
 const Logo = () => {
-    return <div></div>;
+    return <img src={logo} className="w-[48px] h-[48px]" />;
 };
 
-export default Logo;
+export { Logo };

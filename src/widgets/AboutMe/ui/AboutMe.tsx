@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import { Context } from "../../../pages/Landing";
+import { useRefsContext } from "../../../shared/contexts/RefsContext";
 
 const AboutMe = () => {
-    const { aboutMeRef } = useContext(Context);
+    const { aboutMeRef } = useRefsContext();
 
     return (
         <section className="h-[100vh] text-white" ref={aboutMeRef}>
@@ -11,4 +10,4 @@ const AboutMe = () => {
     );
 };
 
-export default AboutMe;
+export { AboutMe };

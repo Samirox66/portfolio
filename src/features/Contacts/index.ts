@@ -1,3 +1,3 @@
-import Contacts from "./ui/Contacts";
+import Contacts from "./ui/Contacts/Contacts";
 
 export { Contacts };

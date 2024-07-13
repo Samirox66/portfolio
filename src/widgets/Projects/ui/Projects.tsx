@@ -1,8 +1,7 @@
-import { useContext } from "react";
-import { Context } from "../../../pages/Landing";
+import { useRefsContext } from "../../../shared/contexts/RefsContext";
 
 const Projects = () => {
-    const { projectsRef } = useContext(Context);
+    const { projectsRef } = useRefsContext();
 
     return (
         <section className="h-[100vh] text-white" ref={projectsRef}>

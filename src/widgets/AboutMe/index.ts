@@ -1,3 +1,1 @@
-import AboutMe from "./ui/AboutMe";
-
-export { AboutMe };
+export { AboutMe } from "./ui/AboutMe";

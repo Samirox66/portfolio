@@ -1,37 +1,24 @@
+import { RefsProvider } from "../../../app/providers/RefsProvider";
 import { AboutMe } from "../../../widgets/AboutMe";
+import { Begin } from "../../../widgets/Begin";
 import { Footer } from "../../../widgets/Footer";
 import { Header } from "../../../widgets/Header";
 import { Projects } from "../../../widgets/Projects";
 import { Technologies } from "../../../widgets/Technologies";
-import { useRef, MutableRefObject, createContext, createRef } from "react";
-
-type TContext = {
-    aboutMeRef: MutableRefObject<HTMLElement | null>;
-    projectsRef: MutableRefObject<HTMLElement | null>;
-    technologiesRef: MutableRefObject<HTMLElement | null>;
-};
-export const Context = createContext<TContext>({
-    aboutMeRef: createRef(),
-    projectsRef: createRef(),
-    technologiesRef: createRef(),
-});
 
 const Landing = () => {
-    const aboutMeRef = useRef(null);
-    const projectsRef = useRef(null);
-    const technologiesRef = useRef(null);
-
     return (
-        <Context.Provider value={{ aboutMeRef, projectsRef, technologiesRef }}>
+        <RefsProvider>
             <Header />
             <main>
+                <Begin />
                 <AboutMe />
                 <Projects />
                 <Technologies />
             </main>
             <Footer />
-        </Context.Provider>
+        </RefsProvider>
     );
 };
 
-export default Landing;
+export { Landing };
