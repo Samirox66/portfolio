@@ -2,7 +2,8 @@ import { useRefsContext } from "../../../shared/contexts/RefsContext";
 import { H2Title } from "../../../shared/H2Title/H2Title";
 import { Project } from "./Project";
 
-import telegram from "../../../features/Contacts/assets/telegram.svg";
+import inream from "../assets/ic_interactive_38x35.svg";
+import eatly from "../assets/eatly.png";
 
 const Projects = () => {
     const { projectsRef } = useRefsContext();
@@ -10,12 +11,18 @@ const Projects = () => {
     return (
         <section className="px-[10%] flex flex-col gap-10" ref={projectsRef}>
             <H2Title>Projects</H2Title>
-            <div>
+            <div className="flex justify-between flex-wrap">
                 <Project
-                    image={telegram}
+                    image={inream}
                     title="Inream"
                     description="chto-to"
-                    href="https://lang.inream.com/"
+                    href="https://inream.com/"
+                />
+                <Project
+                    image={eatly}
+                    title="Study project for T1 Holding"
+                    description="esche"
+                    href="https://samirox66.github.io/open-js-react-school/"
                 />
             </div>
         </section>
