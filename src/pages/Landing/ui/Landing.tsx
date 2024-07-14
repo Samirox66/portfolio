@@ -10,7 +10,7 @@ const Landing = () => {
     return (
         <RefsProvider>
             <Header />
-            <main>
+            <main className="flex flex-col gap-32">
                 <Begin />
                 <AboutMe />
                 <Projects />

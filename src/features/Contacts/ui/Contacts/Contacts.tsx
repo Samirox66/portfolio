@@ -3,15 +3,28 @@ import telegram from "../../assets/telegram.svg";
 import linkedin from "../../assets/Linkedin.svg";
 import { Contact } from "../Contact/Contact";
 
-const Contacts = () => {
+interface ContactsProps {
+    size: "small" | "big";
+}
+
+const Contacts = ({ size }: ContactsProps) => {
     return (
         <section className="flex items-center gap-5">
-            <Contact href="https://github.com/Samirox66" logo={github} />
+            <Contact
+                href="https://github.com/Samirox66"
+                logo={github}
+                size={size}
+            />
             <Contact
                 href="https://www.linkedin.com/in/samir-bairamov-46595421a/"
                 logo={linkedin}
+                size={size}
             />
-            <Contact href="https://t.me/samirox66" logo={telegram} />
+            <Contact
+                href="https://t.me/samirox66"
+                logo={telegram}
+                size={size}
+            />
         </section>
     );
 };

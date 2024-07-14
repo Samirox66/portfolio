@@ -10,7 +10,7 @@ const AnchorLink = ({ children, scrollRef: ref }: AnchorLinkProps) => {
             onClick={() => {
                 ref?.current?.scrollIntoView({ behavior: "smooth" });
             }}
-            className="cursor-pointer"
+            className="cursor-pointer hover:opacity-90"
         >
             {children}
         </div>

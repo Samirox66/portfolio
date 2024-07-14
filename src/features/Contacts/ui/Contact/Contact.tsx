@@ -1,12 +1,14 @@
 interface ContactProps {
     href: string;
     logo: string;
+    size: "small" | "big";
 }
 
-export const Contact = ({ href, logo }: ContactProps) => {
+export const Contact = ({ href, logo, size }: ContactProps) => {
+    const maxSize = size == "big" ? "w-[72px]" : "w-[32px]";
     return (
-        <a className="cursor-pointer max-w-[32px]" href={href} target="_blank">
-            <img src={logo} />
+        <a className={`cursor-pointer`} href={href} target="_blank">
+            <img className={maxSize} src={logo} />
         </a>
     );
 };
