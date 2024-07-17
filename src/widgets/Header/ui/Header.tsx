@@ -8,13 +8,13 @@ const Header = () => {
 
     return (
         <header className="w-full flex justify-between px-[6.8%] py-[2.3%] box-border">
-            <div className="flex items-center gap-[12px]">
+            <div className="flex items-center gap-[12px] max-[800px]:flex-col">
                 <Logo />
                 <p className="text-white font-semibold text-[1.875rem]">
                     Portfolio
                 </p>
             </div>
-            <section className="flex items-center justify-between gap-5">
+            <section className="flex items-center max-[800px]:flex-col justify-between gap-5">
                 <AnchorLink scrollRef={refs.aboutMeRef}>
                     <a className="text-white font-medium text-[1.875rem]">
                         About me

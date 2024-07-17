@@ -11,7 +11,7 @@ const Projects = () => {
     return (
         <section className="px-[10%] flex flex-col gap-10" ref={projectsRef}>
             <H2Title>Projects</H2Title>
-            <div className="flex justify-between flex-wrap">
+            <div className="flex justify-between flex-wrap flex-1 gap-[40px]">
                 <Project
                     image={inream}
                     title="Inream"

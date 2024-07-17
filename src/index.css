@@ -5,3 +5,26 @@
 #root {
     background: #0f1624;
 }
+
+@media screen and (max-width: 1050px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        scale: 0.8;
+        opacity: 0;
+    }
+    to {
+        scale: 1;
+        opacity: 1;
+    }
+}

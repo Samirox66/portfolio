@@ -8,8 +8,9 @@ interface ContactsProps {
 }
 
 const Contacts = ({ size }: ContactsProps) => {
+    const media = size == "small" ? "max-[500px]:flex-col" : "";
     return (
-        <section className="flex items-center gap-5">
+        <section className={`flex items-center gap-5 ${media}`}>
             <Contact
                 href="https://github.com/Samirox66"
                 logo={github}
