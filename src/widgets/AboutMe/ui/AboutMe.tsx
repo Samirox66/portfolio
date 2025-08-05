@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { useRefsContext } from "../../../shared/contexts/RefsContext";
 import { H2Title } from "../../../shared/H2Title/H2Title";
+import { FormattedMessage } from "react-intl";
 
 interface Event {
   year: string;
@@ -28,7 +29,9 @@ const AboutMe = () => {
 
   return (
     <section className="px-[10%] flex flex-col items-center" ref={aboutMeRef}>
-      <H2Title>About me</H2Title>
+      <H2Title>
+        <FormattedMessage id="landing_aboutMe" />
+      </H2Title>
       <div className="grid grid-rows-3 grid-flow-col place-items-center relative auto-cols-fr w-full">
         <div className="absolute w-[90%] bg-white h-3 rounded-md"></div>
         {events}

@@ -13,6 +13,7 @@
     "dependencies": {
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-intl": "^7.1.11",
         "react-router-dom": "^6.17.0",
         "react-samiracle-games": "^1.0.6"
     },
