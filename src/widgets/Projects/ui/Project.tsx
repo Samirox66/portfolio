@@ -13,7 +13,7 @@ export const Project = ({ image, title, description, href }: ProjectProps) => {
       <img className="bg-white w-full max-h-[40%]" src={image} />
       <h4 className="text-white text-4xl text-center font-semibold">{title}</h4>
       <div className="bg-gradient-to-r from-[#13ADC7] via-[#6978D1] to-[#945DD6] w-[50%] h-[4px]"></div>
-      <p className="text-white text-[1.75rem] w-full font-semibold">
+      <p className="text-white text-[1.75rem] text-center w-full font-semibold">
         {description}
       </p>
       <a

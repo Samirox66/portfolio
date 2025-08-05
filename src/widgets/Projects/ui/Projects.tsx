@@ -18,25 +18,25 @@ const Projects = () => {
         <Project
           image={inream}
           title="Inream"
-          description="chto-to"
+          description="Language learning exercises powered by AI 2.0 for 80+ languages"
           href="https://inream.com/"
         />
         <Project
           image={inream}
           title="Interactiver"
-          description="Interactive exercises editor"
+          description="Powerfull custom interactive exercises editor"
           href="https://lang.inream.com/editor"
         />
         <Project
           image={inream}
           title="Inream Duo"
-          description="AI exercises"
+          description="Language learning exercises powered by AI for 80+ languages"
           href="https://lang.inream.com/duo"
         />
         <Project
           image={eatly}
-          title="Study project for T1 Holding"
-          description="esche"
+          title="Test-study project for T1 Holding"
+          description="Recipes blog as a study project for T1 Holding company"
           href="https://samirox66.github.io/open-js-react-school/"
         />
       </div>
