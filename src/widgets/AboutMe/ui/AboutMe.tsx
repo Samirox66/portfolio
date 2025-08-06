@@ -3,27 +3,18 @@ import { useRefsContext } from "../../../shared/contexts/RefsContext";
 import { H2Title } from "../../../shared/H2Title/H2Title";
 import { FormattedMessage } from "react-intl";
 
-interface Event {
-  year: string;
-  value: string;
-}
-
-const eventsMeta: Event[] = [
-  { year: "2019", value: "I was " },
-  { year: "2020", value: "Polytech" },
-  { year: "2021", value: "Frontend" },
-  { year: "2022", value: "Inream" },
-  { year: "2024", value: "Gazprom CPS" },
-];
+const eventsMeta = ["2019", "2020", "2021", "2022", "2024"];
 
 const AboutMe = () => {
   const { aboutMeRef } = useRefsContext();
 
   const events = eventsMeta.map((event, index) => (
     <Fragment key={index}>
-      <p className="text-white text-[2.25rem] self-end">{event.year}</p>
+      <p className="text-white text-[2.25rem] self-end">{event}</p>
       <div className="w-[40px] h-[40px] rounded-[50%] bg-white"></div>
-      <p className="text-white text-[1.75rem] self-start">{event.value}</p>
+      <p className="text-white text-[1.75rem] self-start">
+        <FormattedMessage id={`landing_event${event}`} />
+      </p>
     </Fragment>
   ));
 
