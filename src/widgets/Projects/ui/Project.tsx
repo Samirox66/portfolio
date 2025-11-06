@@ -10,7 +10,7 @@ interface ProjectProps {
 export const Project = ({ image, title, href }: ProjectProps) => {
   return (
     <section className="animation flex flex-col flex-grow max-w-[600px] min-w-[300px] items-center justify-between gap-6 p-6 shadow-[0_0_12px_0_white] w-[45%] rounded-br-[50px] rounded-tl-[50px]">
-      <img className="bg-white w-full max-h-[40%]" src={image} />
+      <img className="bg-white w-full h-[40%]" src={image} />
       <h4 className="text-white text-4xl text-center font-semibold">
         <FormattedMessage id={`landing_project_header_${title}`} />
       </h4>

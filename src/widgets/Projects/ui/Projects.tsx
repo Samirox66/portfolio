@@ -3,7 +3,9 @@ import { H2Title } from "../../../shared/H2Title/H2Title";
 import { Project } from "./Project";
 
 import inream from "../assets/ic_interactive_38x35.svg";
+import imream2 from "../assets/inream.png";
 import eatly from "../assets/eatly.png";
+import editor from "../assets/editor.png";
 import { FormattedMessage } from "react-intl";
 
 const Projects = () => {
@@ -18,9 +20,9 @@ const Projects = () => {
         <FormattedMessage id="landing_projects" />
       </H2Title>
       <div className="flex justify-evenly flex-wrap flex-1 gap-[40px]">
-        <Project image={inream} title="inream" href="https://inream.com/" />
+        <Project image={imream2} title="inream" href="https://inream.com/" />
         <Project
-          image={inream}
+          image={editor}
           title="editor"
           href="https://lang.inream.com/editor"
         />
