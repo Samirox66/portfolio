@@ -59,7 +59,7 @@ const Technologies = () => {
       <H2Title>
         <FormattedMessage id="landing_technologies" />
       </H2Title>
-      <section className="flex flex-col w-full items-center gap-[54px]">
+      <section className="animation flex flex-col w-full items-center gap-[54px]">
         {technologies}
       </section>
     </section>

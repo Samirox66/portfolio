@@ -1,0 +1,7 @@
+.animation {
+  animation-timeline: view() !important;
+  animation-range: 0 600px !important;
+  scale: 0.8;
+  opacity: 0;
+  animation: fadeIn linear forwards;
+}

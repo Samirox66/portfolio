@@ -1,16 +1,16 @@
 #root {
-    max-width: 1280px;
-    min-width: 360px;
-    margin: 0 auto;
-    text-align: center;
-    color: white;
+  max-width: 1280px;
+  min-width: 360px;
+  margin: 0 auto;
+  text-align: center;
+  color: white;
 }
 
 @keyframes logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

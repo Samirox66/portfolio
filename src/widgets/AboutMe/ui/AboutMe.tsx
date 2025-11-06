@@ -32,7 +32,7 @@ const AboutMe = () => {
       {slicedEvents.map((events, index) => (
         <div
           key={index}
-          className="grid grid-rows-3 grid-flow-col place-items-center relative auto-cols-fr w-full"
+          className="animation grid grid-rows-3 grid-flow-col place-items-center relative auto-cols-fr w-full"
         >
           <div className="absolute w-[90%] bg-white h-3 rounded-md"></div>
           {events.map((event, index) => (
