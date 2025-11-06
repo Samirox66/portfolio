@@ -35,7 +35,10 @@ const Technologies = () => {
   const { technologiesRef } = useRefsContext();
 
   const technologies = technologiesMeta.map((technology, index) => (
-    <div key={index} className="w-full flex flex-col items-center">
+    <div
+      key={index}
+      className="animation_300 w-full flex flex-col items-center"
+    >
       <div className="flex justify-between items-end w-[90%]">
         <p className="text-[2.25rem]">{technology.name}</p>
         <p className="text-[1.5rem]">
@@ -59,7 +62,7 @@ const Technologies = () => {
       <H2Title>
         <FormattedMessage id="landing_technologies" />
       </H2Title>
-      <section className="animation flex flex-col w-full items-center gap-[54px]">
+      <section className="flex flex-col w-full items-center gap-[54px]">
         {technologies}
       </section>
     </section>
