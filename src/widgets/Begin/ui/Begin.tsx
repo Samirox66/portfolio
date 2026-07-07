@@ -5,10 +5,10 @@ import drawing from "../assets/drawing.svg";
 import me from "../assets/me.jpeg";
 
 export const Begin = () => {
-  const { aboutMeRef } = useRefsContext();
+  const { projectsRef } = useRefsContext();
 
   const handleOnButtonClick = () => {
-    aboutMeRef?.current?.scrollIntoView({ behavior: "smooth" });
+    projectsRef?.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -17,9 +17,9 @@ export const Begin = () => {
       <h1 className="text-white text-[4rem] font-bold text-center">
         <FormattedMessage id="landing_header" />
       </h1>
-      <div className="flex gap-[40px] items-center md:items-start flex-col md:flex-row">
+      <div className="flex gap-[40px] md:items-start flex-col md:flex-row">
         <img src={me} className="rounded-[1em] w-2/3 md:w-1/2" />
-        <p className="text-[#BCBCBC] text-[2.24rem] font-medium w-full md:w-1/2">
+        <p className="text-[#BCBCBC] md:text-start text-[2.24rem] font-medium w-full md:w-1/2 whitespace-break-spaces">
           <FormattedMessage id="landing_description" />
         </p>
       </div>
