@@ -28,7 +28,7 @@ const Header = () => {
         </AnchorLink>
         <AnchorLink scrollRef={refs.technologiesRef}>
           <a className="text-white font-medium text-[1.875rem]">
-            <FormattedMessage id="landing_technologies" />
+            <FormattedMessage id="landing_technologies_link" />
           </a>
         </AnchorLink>
       </section>

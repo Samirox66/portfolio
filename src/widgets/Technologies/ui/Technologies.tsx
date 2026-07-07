@@ -10,9 +10,19 @@ interface ITechnologies {
 
 const technologiesMeta: ITechnologies[] = [
   {
-    name: "HTML/CSS",
+    name: "Nest.js",
+    type: "Advanced",
+    percent: 90,
+  },
+  {
+    name: "Prisma.js",
     type: "Advanced",
     percent: 95,
+  },
+  {
+    name: "Postgresql",
+    type: "Advanced",
+    percent: 85,
   },
   {
     name: "React",
@@ -27,7 +37,7 @@ const technologiesMeta: ITechnologies[] = [
   {
     name: "Next.js",
     type: "Advanced",
-    percent: 75,
+    percent: 80,
   },
 ];
 

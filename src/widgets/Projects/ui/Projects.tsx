@@ -6,6 +6,7 @@ import inream from "../assets/ic_interactive_38x35.svg";
 import imream2 from "../assets/inream.png";
 import eatly from "../assets/eatly.png";
 import editor from "../assets/editor.png";
+import mentalix from "../assets/mentalix.png";
 import { FormattedMessage } from "react-intl";
 
 const Projects = () => {
@@ -21,6 +22,11 @@ const Projects = () => {
       </H2Title>
       <div className="flex justify-evenly flex-wrap flex-1 gap-[40px]">
         <Project image={imream2} title="inream" href="https://inream.com/" />
+        <Project
+          image={mentalix}
+          title="mentalix"
+          href="https://mental-ix.ru/landing"
+        />
         <Project
           image={editor}
           title="editor"
