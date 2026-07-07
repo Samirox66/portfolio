@@ -19,7 +19,7 @@ export const Begin = () => {
       </h1>
       <div className="flex gap-[40px] md:items-start flex-col md:flex-row">
         <img src={me} className="rounded-[1em] w-2/3 md:w-1/2" />
-        <p className="text-[#BCBCBC] md:text-start text-[2.24rem] font-medium w-full md:w-1/2 whitespace-break-spaces">
+        <p className="text-[#BCBCBC] md:text-start text-[1.9rem] font-medium w-full md:w-1/2 whitespace-break-spaces">
           <FormattedMessage id="landing_description" />
         </p>
       </div>
