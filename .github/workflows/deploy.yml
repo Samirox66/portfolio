@@ -1,0 +1,64 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: deploy-portfolio
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure remote directory and shared network exist
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            set -e
+            mkdir -p /srv/portfolio
+            docker network inspect edge >/dev/null 2>&1 || docker network create edge
+
+      # No git on the server: the runner's checkout is synced over directly, so the
+      # server never needs GitHub credentials of its own.
+      - name: Sync source to server
+        uses: burnett01/rsync-deployments@7.0.1
+        with:
+          switches: -avzr --delete --exclude=.git --exclude=node_modules --exclude=dist
+          path: ./
+          remote_path: /srv/portfolio/
+          remote_host: ${{ secrets.SSH_HOST }}
+          remote_user: ${{ secrets.SSH_USER }}
+          remote_key: ${{ secrets.SSH_KEY }}
+
+      - name: Write env file, start shared proxy, deploy
+        uses: appleboy/ssh-action@v1.2.0
+        env:
+          APP_DOMAIN: ${{ vars.APP_DOMAIN }}
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          envs: APP_DOMAIN
+          script: |
+            set -e
+            cd /srv/portfolio
+
+            umask 077
+            cat > docker/deploy/.env <<ENVEOF
+            APP_DOMAIN=$APP_DOMAIN
+            ENVEOF
+
+            docker compose -p goal-getter-proxy -f docker/proxy/docker-compose.yml up -d
+
+            docker compose \
+              -p portfolio \
+              -f docker/deploy/docker-compose.yml \
+              --env-file docker/deploy/.env \
+              up -d --build --remove-orphans

@@ -1,0 +1,34 @@
+# Shared edge reverse proxy for the whole VPS: one instance, not redeployed per app.
+# This is an identical copy of the same file used by the goalGetter repos on this server —
+# every app's deploy workflow runs `docker compose -p goal-getter-proxy up -d` against its
+# own synced copy, so whichever app deploys first bootstraps it and the rest just no-op
+# against the already-running instance. Keep this file byte-for-byte identical to the
+# goalGetter copies (same project name, same container name) so they all converge on one
+# proxy instead of fighting over ports 80/443.
+# It discovers backend/frontend containers automatically via their `caddy` labels
+# (see docker/deploy/docker-compose.yml here and in the goalGetter repos) and issues
+# Let's Encrypt certs for each domain automatically.
+services:
+  caddy:
+    image: lucaslorentz/caddy-docker-proxy:2.9-alpine
+    container_name: goal-getter-proxy
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '443:443'
+    environment:
+      - CADDY_INGRESS_NETWORKS=edge
+    networks:
+      - edge
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+networks:
+  edge:
+    external: true
+
+volumes:
+  caddy_data:
+  caddy_config:

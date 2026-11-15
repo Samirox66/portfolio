@@ -1,0 +1,16 @@
+services:
+  portfolio:
+    build:
+      context: ../../
+      dockerfile: Dockerfile
+    container_name: portfolio
+    restart: unless-stopped
+    networks:
+      - edge
+    labels:
+      caddy: ${APP_DOMAIN}
+      caddy.reverse_proxy: '{{upstreams 80}}'
+
+networks:
+  edge:
+    external: true
