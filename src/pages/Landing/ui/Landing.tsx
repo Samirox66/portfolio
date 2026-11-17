@@ -4,6 +4,7 @@ import { AboutMe } from "../../../widgets/AboutMe";
 import { Begin } from "../../../widgets/Begin";
 import { Footer } from "../../../widgets/Footer";
 import { Header } from "../../../widgets/Header";
+import { Process } from "../../../widgets/Process";
 import { Projects } from "../../../widgets/Projects";
 import { Technologies } from "../../../widgets/Technologies";
 
@@ -16,6 +17,7 @@ const Landing = () => {
           <Begin />
           <AboutMe />
           <Projects />
+          <Process />
           <Technologies />
         </main>
         <Footer />

@@ -36,10 +36,12 @@ const technologiesMeta: ITechnologies[] = [
   },
   {
     name: "Next.js",
-    type: "Advanced",
+    type: "Intermediate",
     percent: 80,
   },
 ];
+
+const aiToolsMeta = ["Claude Code", "Cursor", "GitHub Copilot", "LLM APIs"];
 
 const Technologies = () => {
   const { technologiesRef } = useRefsContext();
@@ -75,6 +77,21 @@ const Technologies = () => {
       <section className="flex flex-col w-full items-center gap-[54px]">
         {technologies}
       </section>
+      <div className="flex flex-col items-center gap-5 w-full">
+        <p className="text-[1.75rem] text-[#BCBCBC]">
+          <FormattedMessage id="landing_ai_tools" />
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          {aiToolsMeta.map((tool) => (
+            <span
+              key={tool}
+              className="text-white text-[1.5rem] font-medium px-6 py-2 rounded-full border border-[#6978D1] bg-[#162950]"
+            >
+              {tool}
+            </span>
+          ))}
+        </div>
+      </div>
     </section>
   );
 };

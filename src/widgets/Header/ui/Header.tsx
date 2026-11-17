@@ -26,6 +26,11 @@ const Header = () => {
             <FormattedMessage id="landing_projects" />
           </a>
         </AnchorLink>
+        <AnchorLink scrollRef={refs.processRef}>
+          <a className="text-white font-medium text-[1.875rem]">
+            <FormattedMessage id="landing_process" />
+          </a>
+        </AnchorLink>
         <AnchorLink scrollRef={refs.technologiesRef}>
           <a className="text-white font-medium text-[1.875rem]">
             <FormattedMessage id="landing_technologies_link" />

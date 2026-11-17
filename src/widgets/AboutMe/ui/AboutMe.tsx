@@ -27,7 +27,7 @@ const MeTooltip = ({ event, children }: MeTooltipProps) => (
 
 const AboutMe = () => {
   const { aboutMeRef } = useRefsContext();
-  const [slicedEvents, setSlicedEvents] = useState(() => getSlicedEvents());
+  const [slicedEvents, setSlicedEvents] = useState<string[][]>([]); //(() => getSlicedEvents());
 
   useEffect(() => {
     const handleResize = () =>
@@ -43,6 +43,9 @@ const AboutMe = () => {
       <H2Title>
         <FormattedMessage id="landing_aboutMe" />
       </H2Title>
+      <p className="text-[#BCBCBC] text-[1.9rem] font-medium text-center max-w-[900px]">
+        <FormattedMessage id="landing_aboutMe_bio" />
+      </p>
       {slicedEvents.map((events, index) => (
         <div
           key={index}

@@ -3,11 +3,13 @@ import { createContext, createRef, MutableRefObject, useContext } from "react";
 type TContext = {
     aboutMeRef: MutableRefObject<HTMLElement | null>;
     projectsRef: MutableRefObject<HTMLElement | null>;
+    processRef: MutableRefObject<HTMLElement | null>;
     technologiesRef: MutableRefObject<HTMLElement | null>;
 };
 export const RefsContext = createContext<TContext>({
     aboutMeRef: createRef(),
     projectsRef: createRef(),
+    processRef: createRef(),
     technologiesRef: createRef(),
 });
 

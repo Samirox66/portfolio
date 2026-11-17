@@ -21,7 +21,7 @@ nothing to manually create or copy on the server beyond the prerequisites below.
 
 1. Docker, the Docker Compose plugin, and `rsync` are already on the VPS (goalGetter needs
    them too).
-2. DNS: `portfolio.site-url.ru` already points at the server's IP. Caddy issues the cert
+2. DNS: `portfolio.site-url.online` already points at the server's IP. Caddy issues the cert
    automatically on first request to that hostname once this deploys.
 3. The SSH key GitHub Actions deploys with is authorized for the `root` user on the server.
 
@@ -77,7 +77,7 @@ starts the proxy (already running) on first run.
 
 | Name | Value |
 |---|---|
-| `APP_DOMAIN` | `portfolio.site-url.ru` |
+| `APP_DOMAIN` | `portfolio.site-url.online` |
 
 ## What happens on every push to `main`
 
@@ -94,7 +94,7 @@ starts the proxy (already running) on first run.
 
 ## Troubleshooting
 
-- **First deploy fails on Caddy/cert issues**: confirm DNS for `portfolio.site-url.ru`
+- **First deploy fails on Caddy/cert issues**: confirm DNS for `portfolio.site-url.online`
   already resolves to the server before the first push — Caddy requests the cert on first
   request to that hostname.
 - **`docker: network edge not found`**: shouldn't happen (goalGetter already created it, and
